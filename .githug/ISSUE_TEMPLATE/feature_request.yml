@@ -1,0 +1,40 @@
+name: ✨ Feature Request
+description: Suggest a new feature or enhancement
+title: "[Feature]: "
+labels: [enhancement]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the suggestion! Tell us what you'd love to see added.
+
+  - type: input
+    id: version
+    attributes:
+      label: Framework Version (if applicable)
+      placeholder: ex. 1.0.0
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Feature Summary
+      placeholder: Brief description of the feature
+    validations:
+      required: true
+
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Why is this feature needed?
+      placeholder: |
+        What problem does this solve? Who benefits from it?
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context or mockups
+      placeholder: Add screenshots, sketches, code examples, etc.
