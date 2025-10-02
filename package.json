@@ -2,6 +2,11 @@
   "name": "@novarel/source",
   "version": "0.0.0",
   "license": "MIT",
+  "author": {
+    "name": "Muhammad Sulman",
+    "email": "whomaderules@gmail.com",
+    "url": "https://www.github.com/SulmaneDev"
+  },
   "scripts": {},
   "private": true,
   "devDependencies": {
