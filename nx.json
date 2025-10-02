@@ -49,6 +49,9 @@
     }
   },
   "release": {
-    "projects": ["packages/reflect"]
+    "projects": ["packages/reflect"],
+    "publish": {
+      "executor": "@nx/js:release-publish"
+    }
   }
 }
