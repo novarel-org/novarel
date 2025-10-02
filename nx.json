@@ -47,15 +47,12 @@
     "test": {
       "dependsOn": ["^build"]
     }
-<<<<<<< HEAD
   },
   "release": {
     "projects": ["packages/reflect"],
     "publish": {
       "executor": "@nx/js:release-publish"
     }
-=======
->>>>>>> cf60b2944af5c42d7b2fcd5f0df445fbc35d9a5d
   }
  
 }
