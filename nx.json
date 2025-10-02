@@ -47,5 +47,8 @@
     "test": {
       "dependsOn": ["^build"]
     }
+  },
+  "release": {
+    "projects": ["packages/reflect"]
   }
 }
