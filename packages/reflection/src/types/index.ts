@@ -27,3 +27,28 @@ export type Abstract<T> = Constructor<T> | Factory<T> | string | symbol;
  * @template T The concrete value or the type of instance it represents.
  */
 export type Concrete<T> = Abstract<T> | T;
+
+
+/**
+ * A type represents a classical container
+ * binding.
+ * @template T The concrete value or the type of instance it represents.
+ */
+export type ClassicalBinding<T> = {
+    shared: boolean;
+    concrete: Concrete<T>;
+}
+
+/**
+ * Represents the type value for injection metadata.
+ */
+export type ServiceType<T extends string = string> = "service" | T;
+
+/**
+ * A type representation of a metadata
+ * that saved.
+ */
+export type InjectionMetadata<T extends string = string> = {
+    type: ServiceType<T>,
+    extra?: any;
+}
