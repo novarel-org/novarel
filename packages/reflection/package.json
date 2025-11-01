@@ -26,5 +26,32 @@
   "dependencies": {
     "tslib": "^2.3.0"
   },
-  "author": "Novarel <whomaderules@gmail.com>"
+  "author": "Novarel <whomaderules@gmail.com>",
+  "nx": {
+    "targets": {
+      "build": {
+        "outputs": [
+          "{projectRoot}/dist"
+        ],
+        "inputs": [
+          "production",
+          "^production"
+        ],
+        "executor": "@nx/js:tsc",
+        "options": {
+          "outputPath": "packages/reflection/dist",
+          "main": "packages/reflection/src/index.ts",
+          "tsConfig": "packages/reflection/tsconfig.lib.json",
+          "assets": [
+            "packages/reflection/README.md",
+            {
+              "glob": "**/*",
+              "input": "packages/reflection/",
+              "output": "./"
+            }
+          ]
+        }
+      }
+    }
+  }
 }
