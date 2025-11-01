@@ -27,6 +27,12 @@
     "tslib": "^2.3.0"
   },
   "author": "Novarel <whomaderules@gmail.com>",
+  "files": [
+    "package.json",
+    "README.md",
+    "dist",
+    "LICENCE"
+  ],
   "nx": {
     "targets": {
       "build": {
