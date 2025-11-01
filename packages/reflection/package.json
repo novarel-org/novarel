@@ -1,7 +1,7 @@
 {
   "name": "@novarel/reflection",
   "description": "A lightweight and powerful reflection library for TypeScript.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": false,
   "license": "MIT",
   "tags": [
