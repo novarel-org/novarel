@@ -41,7 +41,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: reflection-build
-          path: dist/packages/reflection
+          path: packages/reflection/dist
 
       - uses: actions/setup-node@v4
         with:
@@ -50,6 +50,6 @@ jobs:
 
       - name: Publish to npm
         run: npm publish --access public
-        working-directory: dist/packages/reflection
+        working-directory: packages/reflection/dist
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
