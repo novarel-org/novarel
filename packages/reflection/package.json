@@ -1,7 +1,15 @@
 {
   "name": "@novarel/reflection",
+  "description": "A lightweight and powerful reflection library for TypeScript.",
   "version": "0.0.1",
-  "private": true,
+  "private": false,
+  "license": "MIT",
+  "tags": [
+    "reflection",
+    "typescript",
+    "metadata",
+    "decorator"
+  ],
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -17,5 +25,6 @@
   },
   "dependencies": {
     "tslib": "^2.3.0"
-  }
+  },
+  "author": "Novarel <whomaderules@gmail.com>"
 }

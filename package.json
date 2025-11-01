@@ -2,6 +2,13 @@
   "name": "@novarel/source",
   "version": "0.0.0",
   "license": "MIT",
+  "description": "The monorepo for the Novarel project, containing all packages and configurations.",
+  "tags": [
+    "novarel",
+    "monorepo",
+    "typescript",
+    "reflection"
+  ],
   "scripts": {},
   "private": true,
   "dependencies": {
