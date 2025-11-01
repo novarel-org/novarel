@@ -31,29 +31,29 @@ jobs:
         with:
           name: reflection-build
           path: packages/reflection/dist
+
   publish:
     needs: build
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
     steps:
-      - name: Download build artifact
-        uses: actions/download-artifact@v4
+      - uses: actions/checkout@v4
         with:
-          name: reflection-build
-          path: packages/reflection/dist
+          fetch-depth: 0
 
       - uses: actions/setup-node@v4
         with:
           node-version: 22
           registry-url: 'https://registry.npmjs.org/'
 
-      - name: Check build output
-        run: |
-          echo "Contents of packages/reflection/dist:"
-          ls -la packages/reflection/dist
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: reflection-build
+          path: packages/reflection/dist
 
       - name: Publish to npm
         run: npm publish --access public
-        working-directory: packages/reflection/dist
+        working-directory: packages/reflection
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
