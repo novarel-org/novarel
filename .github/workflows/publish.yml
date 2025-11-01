@@ -1,0 +1,55 @@
+name: CI/CD
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+
+      - run: npm ci
+
+      - run: npx nx run-many -t lint test build
+
+      - name: Upload build output
+        uses: actions/upload-artifact@v4
+        with:
+          name: reflection-build
+          path: dist/packages/reflection
+
+  publish:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
+    steps:
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: reflection-build
+          path: dist/packages/reflection
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: 'https://registry.npmjs.org/'
+
+      - name: Publish to npm
+        run: npm publish --access public
+        working-directory: dist/packages/reflection
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
