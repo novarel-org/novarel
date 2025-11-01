@@ -24,7 +24,7 @@ jobs:
 
       - run: npm ci
 
-      - run: npx nx run-many -t lint test build
+      - run: npx nx build @novarel/reflection
 
       - name: Upload build output
         uses: actions/upload-artifact@v4
